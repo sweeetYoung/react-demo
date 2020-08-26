@@ -1,0 +1,44 @@
+{
+  "code": 200,
+  "userInfo": {
+    "name": "admin",
+    "uid": 888,
+    "password": "1234"
+  },
+  "production": [
+    {
+      "name": "作品1",
+      "chapter": [
+        {
+          "title": "作品1-章节1",
+          "workId": "c1"
+        },
+        {
+          "title": "作品1-章节2",
+          "workId": "c2"
+        },
+        {
+          "title": "作品1-章节3",
+          "workId": "c3"
+        }
+      ]
+    },
+    {
+      "name": "作品2",
+      "chapter": [
+        {
+          "title": "作品2-章节1",
+          "workId": "b1"
+        },
+        {
+          "title": "作品2-章节2",
+          "workId": "b2"
+        },
+        {
+          "title": "作品2-章节3",
+          "workId": "b3"
+        }
+      ]
+    }
+  ]
+}
