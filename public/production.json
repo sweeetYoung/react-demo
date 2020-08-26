@@ -8,6 +8,7 @@
   "production": [
     {
       "name": "作品1",
+      "id": "1",
       "chapter": [
         {
           "title": "作品1-章节1",
@@ -25,6 +26,7 @@
     },
     {
       "name": "作品2",
+      "id": "2",
       "chapter": [
         {
           "title": "作品2-章节1",
