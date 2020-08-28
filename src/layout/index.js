@@ -22,7 +22,7 @@ class BasicLayout extends React.Component {
         <Layout>
           <Header className="header">
             <div className="logo">A-word-web</div>
-            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']} onClick={this.handleClick}>
+            <Menu theme="dark" mode="horizontal" onClick={this.handleClick}>
               <Menu.Item key="1">
                 <Link to='home'>首页</Link>
               </Menu.Item>

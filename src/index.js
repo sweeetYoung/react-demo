@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import BasicLayout from './layout/index'
 import * as serviceWorker from './serviceWorker';
-
+import MyRoute from './router/index'
 ReactDOM.render(
-  <BasicLayout />,
+  <BasicLayout>
+    <MyRoute/>
+  </BasicLayout>,
   document.getElementById('root')
 );
 

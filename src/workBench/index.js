@@ -21,7 +21,7 @@ class workBench extends React.Component {
       console.warn(err)
     })
   };
-  componentWillMount() {
+  componentDidMount() {
     this.getProductions()
   }
   render() {
