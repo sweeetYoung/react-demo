@@ -1,12 +1,14 @@
 import React from 'react';
 import './style.scss';
-import { Layout, Menu } from 'antd';
-import { BrowserRouter as Router, Route,Link } from 'react-router-dom';
-import workBench from '../workBench/index'
-import home from '../home/index'
-import login from '../login/index'
+import { Layout, Menu, Breadcrumb } from 'antd';
+import {
+  DesktopOutlined,
+  PieChartOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
 
-const { Header } = Layout;
+const { Header, Content, Footer, Sider } = Layout;
+const { SubMenu } = Menu;
 
 class BasicLayout extends React.Component {
   constructor(props) {
@@ -18,31 +20,41 @@ class BasicLayout extends React.Component {
   }
   render () {
     return (
-      <Router>
-        <Layout>
-          <Header className="header">
-            <div className="logo">A-word-web</div>
-            <Menu theme="dark" mode="horizontal" onClick={this.handleClick}>
-              <Menu.Item key="1">
-                <Link to='home'>首页</Link>
-              </Menu.Item>
-              <Menu.Item key="2">
-                <Link to='workBench'>我的写作台</Link>
-              </Menu.Item>
-              <Menu.Item key="3">个人中心</Menu.Item>
-              <Menu.Item key="4" className="loginMenu">
-                <Link to='login'>注册</Link>
-              </Menu.Item>
-              <Menu.Item key="5" className="loginMenu">
-                <Link to='login'>登陆</Link>
-              </Menu.Item>
-            </Menu>
+      <Layout>
+        <Sider>
+          <div className="logo">Model Insights</div>
+          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+            <Menu.Item key="1" icon={<PieChartOutlined />}>
+              Models
+            </Menu.Item>
+            <Menu.Item key="2" icon={<DesktopOutlined />}>
+              Modules
+            </Menu.Item>
+            <SubMenu key="sub1" icon={<UserOutlined />} title="Tools">
+              <Menu.Item key="3">Tom</Menu.Item>
+              <Menu.Item key="4">Bill</Menu.Item>
+              <Menu.Item key="5">Alex</Menu.Item>
+            </SubMenu>
+          </Menu>
+        </Sider>
+        <Layout className="site-layout">
+          <Header className="site-layout-background" style={{ padding: 0 }}>
+            <Breadcrumb style={{ margin: '16px' }}>
+              <Breadcrumb.Item>User</Breadcrumb.Item>
+              <Breadcrumb.Item>Bill</Breadcrumb.Item>
+            </Breadcrumb>
           </Header>
-          <Route exact path="/home" component={home} />
-          <Route path="/workBench" component={workBench} />
-          <Route path="/login" component={login} />
+          <Content style={{ margin: '16px' }}>
+            <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+              Bill is a cat.
+            </div>
+          </Content>
+          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
         </Layout>
-      </Router>
+        {/*<Route exact path="/home" component={home} />*/}
+        {/*<Route path="/workBench" component={workBench} />*/}
+        {/*<Route path="/login" component={login} />*/}
+      </Layout>
     )
   }
 }

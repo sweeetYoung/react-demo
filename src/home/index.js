@@ -10,18 +10,19 @@ class home extends React.Component {
   }
   render() {
     return(
-      <Layout style={{padding: '0 24px 24px'}}>
-        <Content
-          className="site-layout-background"
-          style={{
-            padding: 24,
-            margin: 0,
-            minHeight: 280,
-          }}
-        >
-          这里放route
-        </Content>
-      </Layout>
+      '这里是home'
+      // <Layout style={{padding: '0 24px 24px'}}>
+      //   <Content
+      //     className="site-layout-background"
+      //     style={{
+      //       padding: 24,
+      //       margin: 0,
+      //       minHeight: 280,
+      //     }}
+      //   >
+      //     这里放route
+      //   </Content>
+      // </Layout>
     )
   }
 }
