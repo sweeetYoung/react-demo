@@ -1,19 +1,21 @@
 @import '~antd/dist/antd.css';
-.logo {
-  //width: 240px;
-  //height: 31px;
-  /*background: rgba(255, 255, 255, 0.2);*/
-  /*margin: 5px 28px 16px 0;*/
-  margin: 5% 15%;
-  float: left;
-  color: burlywood;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.site-layout-background {
-  background: #fff;
-}
-.loginMenu {
-  float: right;
+.page {
+  height: 100vh;
+  .logo {
+    //width: 240px;
+    //height: 31px;
+    /*background: rgba(255, 255, 255, 0.2);*/
+    /*margin: 5px 28px 16px 0;*/
+    margin: 5% 15%;
+    float: left;
+    color: burlywood;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .site-layout-background {
+    background: #fff;
+  }
+  .loginMenu {
+    float: right;
+  }
 }

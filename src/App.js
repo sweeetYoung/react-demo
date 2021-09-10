@@ -1,7 +1,7 @@
 import React from 'react'
-import {HashRouter as Router, Route, Switch} from 'react-router-dom'
-import {createBrowserHistory} from "history";
-import mainRoutes from "./router/routes";
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import { createBrowserHistory } from "history";
+import mainRoutes from "./router/routers";
 
 class App extends React.Component {
   constructor(props) {
@@ -35,11 +35,11 @@ class App extends React.Component {
 
     // 生成当前路由
     return <Route key={item.path} path={item.path} exact={item.exact}
-                  render={
-                    routeProps => {
-                      return <item.component {...routeProps} />
-                    }
-                  }>
+      render={
+        routeProps => {
+          return <item.component {...routeProps} />
+        }
+      }>
     </Route>
   }
 
@@ -48,7 +48,7 @@ class App extends React.Component {
       <Router history={createBrowserHistory()}>
         <Switch>
           {
-            mainRoutes.map(item=>{
+            mainRoutes.map(item => {
               return this.generateRoute(item)
             })
           }
