@@ -1,7 +1,7 @@
 import React from 'react'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import { createBrowserHistory } from "history";
-import mainRoutes from "./router/routers";
+import mainRoutes from "./router";
 
 class App extends React.Component {
   constructor(props) {

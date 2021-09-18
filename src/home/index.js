@@ -1,6 +1,6 @@
 import React from "react";
-import {Layout} from 'antd';
-const {Content} = Layout;
+// import {Layout} from 'antd';
+// const {Content} = Layout;
 class home extends React.Component {
   constructor(props) {
     super(props);
