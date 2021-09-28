@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import { createBrowserHistory } from "history";
 import mainRoutes from "./router";
 
@@ -45,7 +45,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router history={createBrowserHistory()}>
+      <HashRouter history={createBrowserHistory()}>
         <Switch>
           {
             mainRoutes.map(item => {
@@ -53,7 +53,7 @@ class App extends React.Component {
             })
           }
         </Switch>
-      </Router>
+      </HashRouter>
     )
   }
 }
