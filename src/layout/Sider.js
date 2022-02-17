@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './sider.scss';
 import {Link, HashRouter} from "react-router-dom";
 import { Layout, Menu } from 'antd';
-import mainRoutes from "../router";
+import { mainRoutes } from "../router";
 // import sideMenus from '../utils/sideMenu';
 const { Sider } = Layout;
 const { SubMenu } = Menu;
@@ -20,8 +20,8 @@ const LayoutSide = () => {
                 <SubMenu key={item.key} icon={item.icon} title={item.title}>
                   {
                     item.routes.map(itemC => (
-                      <Menu.Item key={itemC.key} onClick={() => setMenuIndex(item.key)}>
-                        <Link to={item.path}>{item.title}</Link>
+                      <Menu.Item key={itemC.key} onClick={() => setMenuIndex(itemC.key)}>
+                        <Link to={itemC.path}>{itemC.title}</Link>
                       </Menu.Item>
                     ))
                   }

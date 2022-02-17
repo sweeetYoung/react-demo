@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import BasicLayout from './layout/index'
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
-  <BasicLayout>
-  </BasicLayout>,
+  <App />,
   document.getElementById('root')
 );
 

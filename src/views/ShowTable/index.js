@@ -1,5 +1,5 @@
 function showTable() {
-
+  return '&&&&&&&&&&&&&'
 }
 
-export default showTable();
+export default showTable;
