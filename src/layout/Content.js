@@ -1,7 +1,8 @@
 import React, { Suspense } from "react";
-import { HashRouter, Route, Switch } from "react-router-dom";
+import {HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import { Layout } from "antd";
 import { mainRoutes } from "../router";
+// import Home from '../views/Home/index';
 const { Content } = Layout;
 
 function generateRoute(item) {
@@ -39,6 +40,8 @@ function generateRoute(item) {
   )
 }
 function MainContent() {
+  // let location = useLocation();
+  // console.log(location)
   return (
     <Content style={{ margin: '16px' }}>
       <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
@@ -48,6 +51,7 @@ function MainContent() {
               return generateRoute(item)
             })
           }
+          <Redirect to="/Home" />
         </Switch>
       </div>
     </Content>
