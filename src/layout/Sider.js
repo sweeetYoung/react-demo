@@ -1,6 +1,6 @@
 import React from 'react';
 import './sider.scss';
-import { HashRouter, Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Layout, Menu } from 'antd';
 import { mainRoutes } from "../router";
 import { flatten } from "../utils";
@@ -15,10 +15,10 @@ function SideMenu() {
   const pagePath = location.pathname.split('/').pop();
   console.log(location, pagePath)
   let flatRoutes = flatten(mainRoutes, 'routes')
-  const [menuTitle, setMenuTitle] = React.useState(() => window.localStorage.getItem('menuTitle') || 'home');
+  const [menuTitle, setMenuTitle] = React.useState(() => pagePath || 'home');
   const [selectKey, setSelectKey] = React.useState(() => '');
   React.useEffect(() => {
-    window.localStorage.setItem('menuTitle', menuTitle)
+    // window.localStorage.setItem('menuTitle', menuTitle)
     handleSelectedKey()
   })
   function handleMenuChange(title) {
@@ -57,12 +57,10 @@ function SideMenu() {
 }
 function LayoutSide() {
   return (
-    <HashRouter>
-      <Sider>
-        <div className="logo">Model Insights</div>
-        <SideMenu />
-      </Sider>
-    </HashRouter>
+    <Sider>
+      <div className="logo">Model Insights</div>
+      <SideMenu />
+    </Sider>
   )
 }
 export default LayoutSide;

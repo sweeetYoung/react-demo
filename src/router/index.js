@@ -13,6 +13,7 @@ const mainRoutes = [
     key: '1',
     exact: true,
     icon: <SmileOutlined />,
+    breadJump: false,
     component: lazy(() => import('../views/Home/index')),
   },
   {
@@ -20,6 +21,7 @@ const mainRoutes = [
     title: 'ShowTable',
     key: '2',
     icon: <PieChartOutlined />,
+    breadJump: false,
     component: lazy(() => import('../views/ShowTable/index')),
   },
   {
@@ -27,30 +29,35 @@ const mainRoutes = [
     key: '3',
     component: lazy(() => import('../views/Charts/index')),
     title: 'Charts',
+    breadJump: false,
     icon: <DesktopOutlined />,
   },
   {
-    path: '/Tools/:toolId',
+    path: '/Tools',
     title: 'Tools',
     icon: <UserOutlined />,
     key: '4',
+    breadJump: false,
     routes: [
       {
-        path: "/Tools/1",
-        title: "工具-1",
+        path: "/Tools/Tool-1",
+        title: "Tool-1",
         key: '5',
+        breadJump: true,
         component: lazy(() => import('../views/Tools/index')),
       },
       {
-        path: "/Tools/2",
-        title: "工具-2",
+        path: "/Tools/Tool-2",
+        title: "Tool-2",
         key: '6',
+        breadJump: true,
         component: lazy(() => import('../views/Tools/index')),
       },
       {
-        path: "/Tools/3",
-        title: "工具-3",
+        path: "/Tools/Tool-3",
+        title: "Tool-3",
         key: '7',
+        breadJump: true,
         component: lazy(() => import('../views/Tools/index')),
       }
     ]

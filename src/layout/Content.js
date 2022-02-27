@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import {HashRouter, Redirect, Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import { Layout } from "antd";
 import { mainRoutes } from "../router";
 // import Home from '../views/Home/index';
@@ -60,9 +60,7 @@ function MainContent() {
 function LayoutContent() {
   return (
     <Suspense fallback={<div>Loading</div>}>
-      <HashRouter>
-        <MainContent />
-      </HashRouter>
+      <MainContent />
     </Suspense>
   )
 }
