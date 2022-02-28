@@ -6,6 +6,14 @@ import {
   SmileOutlined
 } from '@ant-design/icons';
 
+const routes = [
+  {
+    path: '/Login',
+    key: '8',
+    exact: true,
+    component: lazy(() => import('../views/Login/index')),
+  }
+]
 const mainRoutes = [
   {
     path: '/Home',
@@ -64,4 +72,4 @@ const mainRoutes = [
   }
 ]
 
-export { mainRoutes }
+export { routes, mainRoutes }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import { HashRouter } from "react-router-dom";
 ReactDOM.render(
   <HashRouter>
-    <App />
+    <Suspense fallback={<div>Loading</div>}><App /></Suspense>
   </HashRouter>,
   document.getElementById('root')
 );

@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { Layout } from "antd";
 import { mainRoutes } from "../router";
@@ -59,9 +59,7 @@ function MainContent() {
 }
 function LayoutContent() {
   return (
-    <Suspense fallback={<div>Loading</div>}>
-      <MainContent />
-    </Suspense>
+    <MainContent />
   )
 }
 

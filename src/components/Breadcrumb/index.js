@@ -16,13 +16,13 @@ function Breadcrumbs() {
       {
         breadcrumbs.map(item => {
           return (
-            item.breadJump ?
+            item?.breadJump ?
               <Breadcrumb.Item key={item.key}>
                 <Link to={item.path}>{item.title}</Link>
               </Breadcrumb.Item>
               :
-              <Breadcrumb.Item key={item.key}>
-                {item.title}
+              <Breadcrumb.Item key={item?.key}>
+                {item?.title}
               </Breadcrumb.Item>
           )
         })
