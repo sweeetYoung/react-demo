@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { HashRouter } from "react-router-dom";
+import {HashRouter} from "react-router-dom";
+
 ReactDOM.render(
   <HashRouter>
-    <Suspense fallback={<div>Loading</div>}><App /></Suspense>
+    <Suspense fallback={<div>Loading</div>}>
+      <App />
+    </Suspense>
   </HashRouter>,
   document.getElementById('root')
 );

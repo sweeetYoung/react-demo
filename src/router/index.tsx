@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React, {lazy, ReactNode} from "react";
 import {
   DesktopOutlined,
   PieChartOutlined,
@@ -6,15 +6,27 @@ import {
   SmileOutlined
 } from '@ant-design/icons';
 
-const routes = [
+export interface RouteConfig {
+  path: string;
+  title: string;
+  key: string;
+  exact?: boolean;
+  icon?: ReactNode;
+  breadJump?: boolean;
+  component?: any;
+  routes?: RouteConfig[];
+}
+
+const routes: RouteConfig[] = [
   {
     path: '/Login',
+    title: '登陆',
     key: '8',
     exact: true,
     component: lazy(() => import('../views/Login/index')),
   }
 ]
-const mainRoutes = [
+const mainRoutes: RouteConfig[] = [
   {
     path: '/Home',
     title: 'Home',

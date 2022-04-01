@@ -9,31 +9,31 @@ import { flatten } from "../utils";
 const { Sider } = Layout;
 const { SubMenu } = Menu;
 
-
 function SideMenu() {
   const location = useLocation();
   const pagePath = location.pathname.split('/').pop();
   console.log(location, pagePath)
-  let flatRoutes = flatten(mainRoutes, 'routes')
+  const flatRoutes: any[] = flatten(mainRoutes, 'routes')
+  console.log(flatRoutes)
   const [menuTitle, setMenuTitle] = React.useState(() => pagePath || 'home');
   const [selectKey, setSelectKey] = React.useState(() => '');
   React.useEffect(() => {
     // window.localStorage.setItem('menuTitle', menuTitle)
     handleSelectedKey()
   })
-  function handleMenuChange(title) {
+  function handleMenuChange(title: string) {
     setMenuTitle(title)
     // handleSelectedKey(mainRoutes.find(item => item.title.toLowerCase() === pageIndexParams.toLowerCase()).key)
   }
   function handleSelectedKey() {
     console.log(menuTitle)
-    const wq = flatRoutes.find(item => item.title.toLowerCase() === menuTitle.toLowerCase())
-    console.log(wq, wq.key)
-    setSelectKey(wq.key)
+    // const wq = flatRoutes.find(item => item.title.toLowerCase() === menuTitle.toLowerCase())
+    // console.log(wq, wq.key)
+    setSelectKey(flatRoutes.find(item => item.title.toLowerCase() === menuTitle.toLowerCase()).key);
     console.log(selectKey)
   }
   return (
-    <Menu selectedKeys={[...selectKey]} className="menu" theme="dark" mode="inline">
+    <Menu selectedKeys={[selectKey]} className="menu" theme="dark" mode="inline">
       {
         mainRoutes.map(item =>
           item.routes && item.routes.length > 0 ?

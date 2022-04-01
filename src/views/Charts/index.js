@@ -1,5 +1,6 @@
+import React from "react";
 function Charts() {
-  return '%%%%%%%%%%'
+  return <p>'%%%%%%%%%%'</p>
 }
 
 export default Charts;

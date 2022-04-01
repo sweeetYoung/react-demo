@@ -1,5 +1,8 @@
+import React from "react";
 function Home() {
-  return 'This is home page, Welcome to Model Insights!'
+  return (
+    <p>This is home page, Welcome to Model Insights!</p>
+  )
 }
 
 export default Home;

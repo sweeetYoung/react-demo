@@ -1,115 +1,60 @@
-import { Form, Input, Button, Select } from 'antd';
+import { Form, Input, Button, Checkbox } from 'antd';
 import React from "react";
 import './style.scss';
+import {useHistory} from "react-router-dom";
 
-const { Option } = Select;
-const layout = {
-  labelCol: {
-    span: 8,
-  },
-  wrapperCol: {
-    span: 16,
-  },
-};
-const tailLayout = {
-  wrapperCol: {
-    offset: 8,
-    span: 16,
-  },
-};
+function Login() {
+  let history = useHistory();
+  function onFinish(values) {
+    console.log('Success:', values);
+    window.localStorage.setItem('userInfo', JSON.stringify(values))
+    history.push('/Home')
+  }
 
-class login extends React.Component {
-  formRef = React.createRef();
+  function onFinishFailed(errorInfo) {
+    console.log('Failed:', errorInfo);
+  }
 
-  onGenderChange = value => {
-    this.formRef.current.setFieldsValue({
-      note: `Hi, ${value === 'male' ? 'man' : 'lady'}!`,
-    });
-  };
-
-  onFinish = values => {
-    console.log(values);
-  };
-
-  onReset = () => {
-    this.formRef.current.resetFields();
-  };
-
-  onFill = () => {
-    this.formRef.current.setFieldsValue({
-      note: 'Hello world!',
-      gender: 'male',
-    });
-  };
-
-  render() {
-    return (
-      <Form {...layout} ref={this.formRef} name="control-ref" onFinish={this.onFinish} className="loginForm">
+  return (
+    <div className='form'>
+      <Form
+        className="login"
+        labelCol={{ span: 8 }}
+        wrapperCol={{ span: 8 }}
+        initialValues={{ remember: true }}
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+        autoComplete="off"
+      >
         <Form.Item
-          name="note"
-          className="loginFormItem"
-          label="Note"
-          rules={[
-            {
-              required: true,
-            },
-          ]}
+          label="用户名"
+          name="username"
+          className='loginFormItem'
+          rules={[{ required: true, message: '请输入用户名!' }]}
         >
           <Input />
         </Form.Item>
+
         <Form.Item
-          name="gender"
-          label="Gender"
-          className="loginFormItem"
-          rules={[
-            {
-              required: true,
-            },
-          ]}
+          label="密码"
+          name="password"
+          className='loginFormItem'
+          rules={[{ required: true, message: '请输入密码!' }]}
         >
-          <Select
-            placeholder="Select a option and change input text above"
-            onChange={this.onGenderChange}
-            allowClear
-          >
-            <Option value="male">male</Option>
-            <Option value="female">female</Option>
-            <Option value="other">other</Option>
-          </Select>
+          <Input.Password />
         </Form.Item>
-        <Form.Item
-          noStyle
-          shouldUpdate={(prevValues, currentValues) => prevValues.gender !== currentValues.gender}
-        >
-          {({ getFieldValue }) =>
-            getFieldValue('gender') === 'other' ? (
-              <Form.Item
-                name="customizeGender"
-                label="Customize Gender"
-                rules={[
-                  {
-                    required: true,
-                  },
-                ]}
-              >
-                <Input />
-              </Form.Item>
-            ) : null
-          }
+
+        <Form.Item className='loginFormItem' name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
+          <Checkbox>记住密码</Checkbox>
         </Form.Item>
-        <Form.Item {...tailLayout}>
+
+        <Form.Item className='loginFormItem' wrapperCol={{ offset: 8, span: 16 }}>
           <Button type="primary" htmlType="submit">
-            Submit
-          </Button>
-          <Button htmlType="button" onClick={this.onReset}>
-            Reset
-          </Button>
-          <Button type="link" htmlType="button" onClick={this.onFill}>
-            Fill form
+            提交
           </Button>
         </Form.Item>
       </Form>
-    );
-  }
+    </div>
+  );
 }
-export default login
+export default Login
