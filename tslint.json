@@ -16,6 +16,7 @@
     "triple-equals": false,
     // 对象成员是否需要按照顺序进行编写
     "member-ordering": false
+//    "jsx-a11y/anchor-is-valid": false
   },
   "linterOptions": {
     "exclude": [

@@ -4,11 +4,15 @@ import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {HashRouter} from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 ReactDOM.render(
   <HashRouter>
     <Suspense fallback={<div>Loading</div>}>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </Suspense>
   </HashRouter>,
   document.getElementById('root')

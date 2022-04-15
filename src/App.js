@@ -1,7 +1,7 @@
 import React from 'react'
-import {Route, useHistory} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import BasicLayout from "./layout";
-import { routes } from "./router"
+// import { routes } from "./router"
 import Login from "./views/Login";
 const App = () => {
   return (

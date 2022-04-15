@@ -36,8 +36,8 @@
     "scripts",
     "acceptance-tests",
     "webpack",
-    "jest",
-    "jest.config.js"
+    "src/**/*.js",
+    "src/**/*.jsx"
   ],
   "include": [
     "src"

@@ -1,7 +1,8 @@
 import { Table } from 'antd';
 import React from 'react';
+import FilterBar from "../../components/FilterBar";
 
-function showTable() {
+function ShowTable() {
   const columns = [
     {
       title: 'Full Name',
@@ -65,7 +66,7 @@ function showTable() {
       key: 'operation',
       fixed: 'right',
       width: 100,
-      render: () => <a>action</a>,
+      render: () => 'action',
     },
   ];
 
@@ -73,15 +74,44 @@ function showTable() {
   for (let i = 0; i < 100; i++) {
     data.push({
       key: i,
-      name: `Edrward ${i}`,
+      name: `Edward ${i}`,
       age: 32,
       address: `London Park no. ${i}`,
     });
   }
-
+  const groupData = [
+    {
+      type: 'input',
+      property: 'name',
+      index: '1'
+    },
+    {
+      type: 'input',
+      property: 'sex',
+      index: '2'
+    },
+    {
+      type: 'date',
+      property: 'date',
+      index: '3'
+    },
+    {
+      type: 'input',
+      property: 'age',
+      index: '4'
+    },
+    {
+      type: 'button',
+      property: '',
+      index: '5'
+    }
+  ]
   return (
-    <Table columns={columns} dataSource={data} scroll={{x: 1500, y: 1000}} />
+    <>
+      <FilterBar groupData={groupData} />
+      <Table columns={columns} dataSource={data} scroll={{x: 1500, y: 1000}} />
+    </>
   )
 }
 
-export default showTable;
+export default ShowTable;
