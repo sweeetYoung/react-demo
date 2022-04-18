@@ -10,10 +10,10 @@ interface FilterConfig {
   property?: any,
   index: string
 }
-interface paramsConfig{
+interface ParamsConfig{
   [key: string]: any
 }
-const filterParams: paramsConfig = state.filterParams
+const filterParams: ParamsConfig = state.filterParams
 
 function FilterBar({ groupData }: { groupData: FilterConfig[] }) {
   // 处理筛选栏展示样式
